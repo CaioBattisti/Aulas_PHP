@@ -7,5 +7,8 @@
     <?php
         echo "<h1>Hello World, PHP-7!</H1>";
     ?>
+    <?php
+        phpinfo();
+    ?>
 </body>
 </html>
