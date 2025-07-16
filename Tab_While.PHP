@@ -16,7 +16,7 @@
                 $i++;
             }
 
-            echo "<br>"; // espaço entre as tabuadas
+            echo "<br>";
             $tabuada++;
         }
 ?>
