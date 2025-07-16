@@ -11,7 +11,7 @@
         $cons = str_replace($vogais, "", "Hello World of PHP");
         echo "Consoantes:".$cons,"<br/>";
         //       012345678901
-        $test = "Hello World \n";
+        $test = "Hello World! \n";
         print "Posição da Letra 'o' :";
         print strpos($test , "o"). "<br/>";
         print "Posição da Letra 'o' após 5° :";
