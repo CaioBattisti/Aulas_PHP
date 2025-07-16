@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>Tabuada</title>
 </head>
 <body>
 <?php
@@ -13,7 +13,7 @@ $tabuada = 1;
         $i = 1;
         while ($i <= 10) {
             $resultado = $tabuada * $i;
-            echo "$tabuada * $i = $resultado<br>";
+            echo "$tabuada X $i = $resultado<br>";
             $i++;
         }
 
