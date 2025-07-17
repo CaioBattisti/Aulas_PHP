@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-$arquivo = 'produtos_cadastrados.txt';
+$arquivo = 'produtos.txt';
 
 if (!file_exists($arquivo)) {
     echo "<p>Nenhum produto cadastrado ainda.</p>";
@@ -44,6 +44,7 @@ foreach ($linhas as $linha) {
 
 echo '</table>';
 ?>
+
 
 </body>
 </html>
