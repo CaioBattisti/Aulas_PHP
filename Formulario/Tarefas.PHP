@@ -21,7 +21,7 @@
        $Lista_Tarefas = array();
             if (isset($_GET['nome'])) {
                 $Lista_Tarefas[] = $_GET['nome'];
-            }
+        }
     ?>
 </body>
 </html>
