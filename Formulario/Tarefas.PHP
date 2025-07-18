@@ -23,5 +23,15 @@
                 $Lista_Tarefas[] = $_GET['nome'];
         }
     ?>
+    <table>
+        <tr>
+            <th>Tarefas</th>
+        </tr>
+        <?php foreach ($Lista_Tarefas as $Tarefa) : ?>
+        <tr>
+            <td><?php echo $Tarefa; ?> </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
 </body>
 </html>
