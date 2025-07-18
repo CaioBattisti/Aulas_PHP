@@ -16,5 +16,11 @@
             <input type="submit" value="Cadastrar" />
         </fieldset>
     </form>
+    
+    <?php
+        if (isset($_GET['nome'])) {
+            echo "Nome Informado: ".$_GET['nome'];
+        }
+    ?>
 </body>
 </html>
