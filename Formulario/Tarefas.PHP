@@ -28,9 +28,9 @@
             <th>Tarefas</th>
         </tr>
         <?php foreach ($Lista_Tarefas as $Tarefa) : ?>
-        <tr>
-            <td><?php echo $Tarefa; ?> </td>
-        </tr>
+            <tr>
+                <td><?php echo $Tarefa; ?> </td>
+            </tr>
         <?php endforeach; ?>
     </table>
 </body>
