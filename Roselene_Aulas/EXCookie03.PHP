@@ -16,6 +16,11 @@
     if (isset($_SESSION["Usuario_Logado"])){
         echo "<br>Usuario Logado: ".htmlspecialchars($_SESSION["Usuario_Logado"]);
     }
+
+    if (isset($_SESSION["Carrinho_Compras"])){
+        echo "<br>Itens no carrinho ";
+        print_r($_SESSION["Carrinho_Compras"]);
+    }
 ?>
 </body>
 </html>
