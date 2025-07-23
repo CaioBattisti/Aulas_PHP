@@ -112,7 +112,6 @@ td[rowspan="2"] > center > img {
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-/* Lista de menu (se for usar futuramente) */
 li {
     float: left;
 }
@@ -121,8 +120,6 @@ li a,
 .dropbtn {
     display: inline-block;
     text-decoration: none;
-    color: #004080;
-    padding: 10px 15px;
 }
 
 li.dropdown {
