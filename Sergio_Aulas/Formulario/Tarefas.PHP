@@ -21,8 +21,13 @@
     <?php
         $Lista_Tarefas = array();
             if (isset($_GET['nome'])) {
-                $Lista_Tarefas[] = $_GET['nome'];
-        }
+                $_SESSION['Lista_Tarefas'] [] = $_GET['nome'];
+    }
+            $Lista_Tarefas = array();
+
+            if (isset($_SESSION['Lista_Tarefas'])){
+                $Lista_Tarefas = $_SESSION['Lista_Tarefas'];
+    }
     ?>
     <table>
         <tr>
