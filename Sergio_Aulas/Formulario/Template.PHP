@@ -7,39 +7,44 @@
     <h1>Gerenciamento de Tarefas</h1>
 <!--Aqui irá o restante do código -->
     <form>
-        <fieldset>
-            <legend>Nova Tarefa</legend>
-        <label>
-            Tarefa:
-            <Input type="text" name="nome" />
-            <br/>
-        </label>
-        <label>
-            Descrição (Opcional):
-            <Input type="text" name="descricao" />
-            <br/>
-        </label>
-        <label>
-            Prazo (Opcional):
-            <Input type="text" name="prazo" />
-            <br/>
-        </label>
-            <fieldset>
-                <legend>Prioridade:<legend>
-                    <label>
-                        <input type="radio" name="prioridade" value="baixa" checked />
-                        Baixa
-                        <input type="radio" name="prioridade" value="media" checked />
-                        Média
-                        <input type="radio" name="prioridade" value="Alta" checked />
-                        Alta
-                    </label>
-            </fieldset>
+    <fieldset>
+            <legend>Nova tarefa</legend>
             <label>
-                Tarefa Concluída:
-                <input type="checkbox" name="concluida" value="sim" />
-            <input type="submit" value="Cadastrar" />
+                Tarefa:
+                <input type="text" name="nome" />
+            </label>
+            <br>
+            <br>
+            <label>
+                Descrição :
+                <textarea name="descricao"></textarea>
+            </label>
+            <br>
+            <br>
+            <label>
+                Prazo:
+                <input type="text" name="parazo"/>
+            </label>
+            <br>
+            <br>
         </fieldset>
+        <fieldset>
+            <legend>Prioridade</legend>
+            <label>
+                <input type="radio" name="prioridade" value="baixa" checked/>
+                Baixa
+                <input type="radio" name="prioridade" value="media"/>
+                Média
+                <input type="radio" name="prioridade" value="alta"/>
+                Alta
+            </label>
+        </fieldset>
+        <label>
+            Tarefa concluida:
+            <input type="checkbox" name="concluida" value="sim"/>
+        </label>
+            <input type="submit" value="Cadastrar"/>
+    
     </form>
     <table>
         <tr>
@@ -47,15 +52,15 @@
             <th>Descricao</th>
             <th>Prazo</th>
             <th>Prioridade</th>
-            <th>concluida</th>
+            <th>Concluida</th>
         </tr>
-        <?php foreach ($Lista_Tarefas as $Tarefa) : ?>
+        <?php foreach ($lista_tarefas as $tarefa) : ?>
             <tr>
-                <td><?php echo $Tarefa['nome']; ?> </td>
-                <td><?php echo $Tarefa['descricao']; ?> </td>
-                <td><?php echo $Tarefa['prazo']; ?> </td>
-                <td><?php echo $Tarefa['prioridade']; ?> </td>
-                <td><?php echo $Tarefa['concluida']; ?> </td>
+                <td><?php echo $tarefa['nome']; ?> </td>
+                <td><?php echo $tarefa['descricao']; ?> </td>
+                <td><?php echo $tarefa['prazo']; ?> </td>
+                <td><?php echo $tarefa['prioridade']; ?> </td>
+                <td><?php echo $tarefa['concluida']; ?> </td>
             </tr>
         <?php endforeach; ?>
     </table>
