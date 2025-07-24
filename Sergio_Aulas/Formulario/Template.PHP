@@ -44,10 +44,18 @@
     <table>
         <tr>
             <th>Tarefas</th>
+            <th>Descricao</th>
+            <th>Prazo</th>
+            <th>Prioridade</th>
+            <th>concluida</th>
         </tr>
         <?php foreach ($Lista_Tarefas as $Tarefa) : ?>
             <tr>
-                <td><?php echo $Tarefa; ?> </td>
+                <td><?php echo $Tarefa['nome']; ?> </td>
+                <td><?php echo $Tarefa['descricao']; ?> </td>
+                <td><?php echo $Tarefa['prazo']; ?> </td>
+                <td><?php echo $Tarefa['prioridade']; ?> </td>
+                <td><?php echo $Tarefa['concluida']; ?> </td>
             </tr>
         <?php endforeach; ?>
     </table>
