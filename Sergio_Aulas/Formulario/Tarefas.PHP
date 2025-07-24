@@ -2,34 +2,34 @@
     session_start();
 
     if (isset($_GET['nome']) && $_GET['nome'] != '') {
-       $tarefa = array();
+       $Tarefa = array();
 
-       $tarefa['nome'] = $_GET['nome'];
+       $Tarefa['nome'] = $_GET['nome'];
 
     if(isset($_GET['descricao'])) {
-            $tarefa['descricao'] = $_GET['descricao'];
+            $Tarefa['descricao'] = $_GET['descricao'];
         }else{
-            $tarefa['descricao'] = '';
+            $Tarefa['descricao'] = '';
             }
     if(isset($_GET['prazo'])) {
-        $tarefa['prazo'] = $_GET['prazo'];
+        $Tarefa['prazo'] = $_GET['prazo'];
         }else{
-            $tarefa['prazo'] = '';
+            $Tarefa['prazo'] = '';
             }
-        $tarefa['prioridade'] = $_GET['prioridade'];
+        $Tarefa['prioridade'] = $_GET['prioridade'];
 
     if(isset($_GET['concluida'])) {
-        $tarefa['concluida'] = $_GET['concluida'];
+        $Tarefa['concluida'] = $_GET['concluida'];
         }else{
-            $tarefa['concluida'] = 'nao';
+            $Tarefa['concluida'] = 'nao';
             }
-    $_SESSION['lista_tarefas'][] = $tarefa;
+    $_SESSION['Lista_Tarefas'][] = $Tarefa;
 }
 
-    if (array_key_exists('lista_tarefas', $_SESSION)) {
-        $lista_tarefas = $_SESSION['lista_tarefas'];
+    if (array_key_exists('Lista_Tarefas', $_SESSION)) {
+        $Lista_Tarefas = $_SESSION['Lista_Tarefas'];
     } else {
-        $lista_tarefas = [];
+        $Lista_Tarefas = [];
 }
 
     include "Template.PHP"

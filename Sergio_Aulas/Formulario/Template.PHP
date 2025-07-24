@@ -53,13 +53,13 @@
             <th>Prioridade</th>
             <th>Concluida</th>
         </tr>
-        <?php foreach ($lista_tarefas as $tarefa) : ?>
+        <?php foreach ($Lista_Tarefas as $Tarefa) : ?>
             <tr>
-                <td><?php echo $tarefa['nome']; ?> </td>
-                <td><?php echo $tarefa['descricao']; ?> </td>
-                <td><?php echo $tarefa['prazo']; ?> </td>
-                <td><?php echo $tarefa['prioridade']; ?> </td>
-                <td><?php echo $tarefa['concluida']; ?> </td>
+                <td><?php echo $Tarefa['nome']; ?> </td>
+                <td><?php echo $Tarefa['descricao']; ?> </td>
+                <td><?php echo $Tarefa['prazo']; ?> </td>
+                <td><?php echo $Tarefa['prioridade']; ?> </td>
+                <td><?php echo $Tarefa['concluida']; ?> </td>
             </tr>
         <?php endforeach; ?>
     </table>
