@@ -44,7 +44,6 @@
             <input type="checkbox" name="concluida" value="sim"/>
         </label>
             <input type="submit" value="Cadastrar"/>
-    
     </form>
     <table>
         <tr>
