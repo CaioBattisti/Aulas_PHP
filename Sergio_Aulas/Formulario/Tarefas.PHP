@@ -16,6 +16,7 @@
                 $Lista_Tarefas = arrat();
             }
         include "Template.PHP"
+        //session_destroy():
     ?>
 </body>
 </html>
