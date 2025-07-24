@@ -17,9 +17,9 @@
             $Tarefa['descricao'] = '';
 }
 
-include "Template.PHP"
-//include "Template.PHP";
-//session_destroy():
+        include "Template.PHP"
+        //include "Template.PHP";
+        //session_destroy():
     ?>
 </body>
 </html>
