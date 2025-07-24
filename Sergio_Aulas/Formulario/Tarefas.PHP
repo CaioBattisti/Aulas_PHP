@@ -6,17 +6,20 @@
 </head>
 <body>
     <?php
-        $Lista_Tarefas = array();
-            if (isset($_GET['nome']) && $_GET['nome'] !='') {
-                $_SESSION['Lista_Tarefas'] [] = $_GET['nome'];
-            }
-            if (isset($_SESSION['Lista_Tarefas'])){
-                $Lista_Tarefas = $_SESSION['Lista_Tarefas'];
-            }else{
-                $Lista_Tarefas = arrat();
-            }
-        include "Template.PHP"
-        //session_destroy():
+        if (isset($_GET['nome']) && $_GET['nome'] !='') {
+            $Tarefa = array();
+
+            $Tarefa['nome'] = $_GET['nome'];
+}
+        if (isset($_SESSION['descricao'])){
+            $Tarefa = ['descricao'] = $_GET['descricao'];
+        }else{
+            $Tarefa['descricao'] = '';
+}
+
+include "Template.PHP"
+//include "Template.PHP";
+//session_destroy():
     ?>
 </body>
 </html>
