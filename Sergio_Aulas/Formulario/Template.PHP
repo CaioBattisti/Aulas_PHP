@@ -12,16 +12,32 @@
         <label>
             Tarefa:
             <Input type="text" name="nome" />
+            <br/>
         </label>
         <label>
             Descrição (Opcional):
             <Input type="text" name="descricao" />
+            <br/>
         </label>
         <label>
             Prazo (Opcional):
             <Input type="text" name="prazo" />
+            <br/>
         </label>
-
+            <fieldset>
+                <legend>Prioridade:<legend>
+                    <label>
+                        <input type="radio" name="prioridade" value="baixa" checked />
+                        Baixa
+                        <input type="radio" name="prioridade" value="media" checked />
+                        Média
+                        <input type="radio" name="prioridade" value="Alta" checked />
+                        Alta
+                    </label>
+            </fieldset>
+            <label>
+                Tarefa Concluída:
+                <input type="checkbox" name="concluida" value="sim" />
             <input type="submit" value="Cadastrar" />
         </fieldset>
     </form>
