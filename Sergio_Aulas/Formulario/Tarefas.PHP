@@ -1,11 +1,5 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <title>Document</title>
-</head>
-<body>
     <?php
+        session_start(); 
         if (isset($_GET['nome']) && $_GET['nome'] !='') {
             $Tarefa = array();
 
@@ -36,5 +30,3 @@
         //include "Template.PHP";
         //session_destroy():
     ?>
-</body>
-</html>
