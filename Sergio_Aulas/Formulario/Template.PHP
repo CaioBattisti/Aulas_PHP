@@ -13,10 +13,18 @@
             Tarefa:
             <Input type="text" name="nome" />
         </label>
+        <label>
+            Descrição (Opcional):
+            <Input type="text" name="descricao" />
+        </label>
+        <label>
+            Prazo (Opcional):
+            <Input type="text" name="prazo" />
+        </label>
+
             <input type="submit" value="Cadastrar" />
         </fieldset>
     </form>
-    
     <table>
         <tr>
             <th>Tarefas</th>
