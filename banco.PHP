@@ -23,10 +23,10 @@
             (nome, descricao, prioridade, prazo, concluida)
             VALUES
             (
-                '{$Tarefa['nome']}'",
-                '{$Tarefa['descricao']}'",
-                '{$Tarefa['prioridade']}'",
-                '{$Tarefa['prazo']}'",
+                '{$Tarefa['nome']}',
+                '{$Tarefa['descricao']}',
+                '{$Tarefa['prioridade']}',
+                '{$Tarefa['prazo']}',
                 '{$Tarefa['conclusao']}'
             )    
             ";
