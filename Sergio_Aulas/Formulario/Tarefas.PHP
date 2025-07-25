@@ -1,5 +1,6 @@
 <?php
     session_start();
+        include "banco.PHP"
 
     if (isset($_GET['nome']) && $_GET['nome'] != '') {
        $Tarefa = array();
