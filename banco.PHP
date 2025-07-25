@@ -17,4 +17,18 @@
             }
         return $Tarefas;
         }
+        function gravar_tarefa($conexao, $Tarefa){
+            sqlGravar = "
+            INSERT INTO tarefas
+            (nome, descricao, prioridade, prazo, concluida)
+            VALUES
+            (
+                '{$Tarefa['nome']}'",
+                '{$Tarefa['descricao']}'",
+                '{$Tarefa['prioridade']}'",
+                '{$Tarefa['prazo']}'",
+                '{$Tarefa['conclusao']}'
+            )    
+            ";
+        }
 ?>
