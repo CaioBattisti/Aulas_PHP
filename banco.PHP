@@ -8,4 +8,13 @@
             echo "Problemas para conectar no banco. Verifique os Dados!";
             die();
         }
+        function buscar_tarefas($conexao){
+            $sqlBusca = 'SELECT * FROM tarefas';
+            $resultado = mysqli_query($conexao, $sqlBusca);
+            $Tarefas = array();
+            while ($Tarefa = mysqli_fetch_assoc($resultado)) {
+                $Tarefas[] = $Tarefa;
+            }
+        return $Tarefas;
+        }
 ?>

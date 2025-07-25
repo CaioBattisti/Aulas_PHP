@@ -25,13 +25,7 @@
             }
     $_SESSION['Lista_Tarefas'][] = $Tarefa;
 }
-
-    if (array_key_exists('Lista_Tarefas', $_SESSION)) {
-        $Lista_Tarefas = $_SESSION['Lista_Tarefas'];
-    } else {
-        $Lista_Tarefas = [];
-}
-
+    $lista_tarefas = buscar_tarefas($conexao);
     include "Template.PHP"
     //include "Template.PHP";
     //session_destroy():
