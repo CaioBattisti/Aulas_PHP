@@ -5,57 +5,61 @@
 </head>
 <body>
     <h1>Gerenciamento de Tarefas</h1>
-    <form method="GET" action="Tarefas.PHP">
-        <fieldset>
+<!--Aqui irá o restante do código -->
+    <form>
+    <fieldset>
             <legend>Nova tarefa</legend>
             <label>
                 Tarefa:
                 <input type="text" name="nome" />
             </label>
-            <br><br>
+            <br>
+            <br>
             <label>
-                Descrição:
+                Descrição :
                 <textarea name="descricao"></textarea>
             </label>
-            <br><br>
+            <br>
+            <br>
             <label>
                 Prazo:
-                <input type="date" name="prazo" />
+                <input type="text" name="parazo"/>
             </label>
-            <br><br>
+            <br>
+            <br>
         </fieldset>
         <fieldset>
             <legend>Prioridade</legend>
             <label>
-                <input type="radio" name="prioridade" value="baixa" checked />
+                <input type="radio" name="prioridade" value="baixa" checked/>
                 Baixa
-                <input type="radio" name="prioridade" value="media" />
+                <input type="radio" name="prioridade" value="media"/>
                 Média
-                <input type="radio" name="prioridade" value="alta" />
+                <input type="radio" name="prioridade" value="alta"/>
                 Alta
             </label>
         </fieldset>
         <label>
-            Tarefa concluída:
-            <input type="checkbox" name="concluida" value="sim" />
+            Tarefa concluida:
+            <input type="checkbox" name="concluida" value="sim"/>
         </label>
-        <input type="submit" value="Cadastrar" />
+            <input type="submit" value="Cadastrar"/>
     </form>
     <table>
         <tr>
             <th>Tarefas</th>
-            <th>Descrição</th>
+            <th>Descricao</th>
             <th>Prazo</th>
             <th>Prioridade</th>
-            <th>Concluída</th>
+            <th>Concluida</th>
         </tr>
-        <?php foreach ($lista_tarefas as $Tarefa) : ?>
+        <?php foreach ($Lista_Tarefas as $Tarefa) : ?>
             <tr>
-                <td><?php echo htmlspecialchars($Tarefa['nome']); ?></td>
-                <td><?php echo htmlspecialchars($Tarefa['descricao']); ?></td>
-                <td><?php echo htmlspecialchars($Tarefa['prazo']); ?></td>
-                <td><?php echo htmlspecialchars($Tarefa['prioridade']); ?></td>
-                <td><?php echo htmlspecialchars($Tarefa['concluida']); ?></td>
+                <td><?php echo $Tarefa['nome']; ?> </td>
+                <td><?php echo $Tarefa['descricao']; ?> </td>
+                <td><?php echo $Tarefa['prazo']; ?> </td>
+                <td><?php echo $Tarefa['prioridade']; ?> </td>
+                <td><?php echo $Tarefa['concluida']; ?> </td>
             </tr>
         <?php endforeach; ?>
     </table>
