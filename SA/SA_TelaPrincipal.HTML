@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmacia SA</title>
     <style>
         /* Reset básico */
@@ -12,14 +12,14 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+    
         body {
             font-family: Arial, sans-serif;
             background-color: #f5f9fc;
             color: #333;
             padding: 0;
         }
-
+    
         /* Barra de navegação */
         ul {
             list-style-type: none;
@@ -27,18 +27,18 @@
             border-bottom: 2px solid #003366;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         }
-
+    
         /* clearfix para limpar floats */
         ul::after {
             content: "";
             display: table;
             clear: both;
         }
-
+    
         li {
             float: left;
         }
-
+    
         li a,
         .dropbtn {
             display: inline-block;
@@ -49,17 +49,17 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
-
+    
         li a:hover,
         .dropdown:hover .dropbtn {
             background-color: #0066cc;
         }
-
+    
         li.dropdown {
             display: inline-block;
             position: relative;
         }
-
+    
         /* Conteúdo do dropdown */
         .dropdown-content {
             display: none;
@@ -71,7 +71,7 @@
             border-radius: 4px;
             overflow: hidden;
         }
-
+    
         .dropdown-content a {
             color: #004080;
             padding: 12px 16px;
@@ -80,11 +80,11 @@
             font-size: 14px;
             transition: background-color 0.3s ease;
         }
-
+    
         .dropdown-content a:hover {
             background-color: #e6f0ff;
         }
-
+    
         .dropdown:hover .dropdown-content {
             display: block;
         }
@@ -94,12 +94,13 @@
 <body>
 
     <ul>
+        <li><a href="#home">Início</a></li>
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Cadastro</a>
+            <a href="javascript:void(0)" class="dropbtn">Cadastrar</a>
             <div class="dropdown-content">
-                <a href="SAFuncionario.html">Funcionário</a>
-                <a href="SAFornecedor.HTML">Fornecedor</a>
                 <a href="SAProduto.HTML">Produto</a>
+                <a href="SAFornecedor.HTML">Fornecedor</a>
+                <a href="SAFuncionario.HTML">Funcionário</a>
             </div>
         </li>
         <li class="dropdown">
@@ -113,13 +114,16 @@
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Pesquisar</a>
             <div class="dropdown-content">
-                <a href="#">Funcionário</a>
-                <a href="#">Fornecedor</a>
-                <a href="#">Produto</a>
+                <a href="Form_Front_Back/PesquisarProduto.PHP">Produto</a>
+                <a href="Form_Front_Back/PesquisarFornecedor.PHP">Fornecedor</a>
+                <a href="Form_Front_Back/PesquisarFuncionario.PHP">Funcionário</a>
             </div>
         </li>
     </ul>
 
-</body>
+    <h1 style="color: black; text-align: center; margin-top: 50px;">
+        Bem-vindo ao Sistema da Farmácia SA
+    </h1>
 
+</body>
 </html>
