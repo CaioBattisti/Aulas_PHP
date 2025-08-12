@@ -1,59 +1,30 @@
 <?php
-session_start();
+include '../conexao.php'; // Ajuste o caminho conforme a sua estrutura de pastas
 
-// Verifica se existe a sessão para armazenar produtos
-if (!isset($_SESSION["produtos"])) {
-    $_SESSION["produtos"] = array();
-}
-
-// Se for um POST válido, adiciona os dados do novo produto à sessão
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $produto = array(
-        "Nome_Produto"     => htmlspecialchars($_POST['Nome_Produto']),
-        "Qntd_Enviada"     => htmlspecialchars($_POST['Qntd_Enviada']),
-        "Qntd_Estoque"     => htmlspecialchars($_POST['Qntd_Estoque']),
-        "Nome_Fornecedor"  => htmlspecialchars($_POST['Nome_Fornecedor']),
-        "Lote"             => htmlspecialchars($_POST['Lote']),
-        "Validade"         => htmlspecialchars($_POST['Validade']),
-        "Data_Fabricacao"  => htmlspecialchars($_POST['Data_Fabricacao']),
-        "Tipo_Remedio"     => htmlspecialchars($_POST['Tipo_Remedio'])
-    );
+    $nome_produto = $_POST['Nome_Produto'];
+    $qntd_enviada = $_POST['Qntd_Enviada'];
+    $qntd_estoque = $_POST['Qntd_Estoque'];
+    $nome_fornecedor = $_POST['Nome_Fornecedor'];
+    $lote = $_POST['Lote'];
+    $validade = $_POST['Validade'];
+    $data_fabricacao = $_POST['Data_Fabricacao'];
+    $tipo_remedio = $_POST['Tipo_Remedio'];
 
-    // Adiciona o novo produto na lista
-    $_SESSION["produtos"][] = $produto;
-}
-?>
+    $sql = "INSERT INTO Produtos (nome_produto, quantidade_enviada, quantidade_estoque, nome_fornecedor, lote, validade, data_fabricacao, tipo_remedio)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Produtos Cadastrados</title>
-</head>
-<body>
-    <h1>Lista de Produtos Cadastrados:</h1>
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("siisssss", $nome_produto, $qntd_enviada, $qntd_estoque, $nome_fornecedor, $lote, $validade, $data_fabricacao, $tipo_remedio);
 
-    <?php
-    if (!empty($_SESSION["produtos"])) {
-        foreach ($_SESSION["produtos"] as $index => $produto) {
-            echo "<hr>";
-            echo "<h3>Produto " . ($index + 1) . "</h3>";
-            echo "<p><strong>Nome do Remédio:</strong> {$produto['Nome_Produto']}</p>";
-            echo "<p><strong>Quantidade Enviada (Caixas):</strong> {$produto['Qntd_Enviada']}</p>";
-            echo "<p><strong>Quantidade em Estoque (Caixas):</strong> {$produto['Qntd_Estoque']}</p>";
-            echo "<p><strong>Nome do Fornecedor:</strong> {$produto['Nome_Fornecedor']}</p>";
-            echo "<p><strong>Lote do Remédio:</strong> {$produto['Lote']}</p>";
-            echo "<p><strong>Validade do Remédio:</strong> {$produto['Validade']}</p>";
-            echo "<p><strong>Data da Fabricação:</strong> {$produto['Data_Fabricacao']}</p>";
-            echo "<p><strong>Tipo do Remédio:</strong> {$produto['Tipo_Remedio']}</p>";
-        }
+    if ($stmt->execute()) {
+        echo "Novo produto cadastrado com sucesso!";
     } else {
-        echo "<p>Nenhum produto cadastrado ainda.</p>";
+        echo "Erro: " . $sql . "<br>" . $conn->error;
     }
-    ?>
 
-    <br><br>
-    <a href="../SAProduto.HTML"><button type="button">Voltar ao Cadastro de Produto</button></a>
-    <a href="../SA_TelaPrincipal.HTML"><button type="button">Voltar à Tela Principal</button></a>
-</body>
-</html>
+    $stmt->close();
+}
+
+$conn->close();
+?>
